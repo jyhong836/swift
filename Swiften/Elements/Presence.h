@@ -18,7 +18,7 @@ namespace Swift {
 		public:
 			typedef boost::shared_ptr<Presence> ref;
 
-			enum Type { Available, Error, Probe, Subscribe, Subscribed, Unavailable, Unsubscribe, Unsubscribed };
+			enum Type { Available, Error, Probe, Subscribe, Subscribed, Unavailable, Unsubscribe, Unsubscribed, Invisible, Visible };
 
 			Presence();
 			Presence(const std::string& status);

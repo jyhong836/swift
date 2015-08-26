@@ -27,6 +27,8 @@ void PresenceSerializer::setStanzaSpecificAttributesGeneric(
 		case Presence::Unsubscribe: element.setAttribute("type","unsubscribe"); break;
 		case Presence::Unsubscribed: element.setAttribute("type","unsubscribed"); break;
 		case Presence::Error: element.setAttribute("type","error"); break;
+		case Presence::Invisible: element.setAttribute("type", "invisible"); break;
+		case Presence::Visible: element.setAttribute("type", "visisble"); break;
 		case Presence::Available: break;
 	}
 }
