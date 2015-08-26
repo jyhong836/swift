@@ -39,6 +39,14 @@ void PresenceParser::handleStanzaAttributes(const AttributeMap& attributes) {
 		else if (*type == "error") {
 			getStanzaGeneric()->setType(Presence::Error);
 		}
+		#ifdef SWIFTEN_INVISIBLE_PRESENCE
+			else if (*type == "invisible") {
+				getStanzaGeneric()->setType(Presence::Invisible);
+			}
+			else if (*type == "visible") {
+				getStanzaGeneric()->setType(Presence::Visible);
+			}
+		#endif // SWIFTEN_INVISIBLE_PRESENCE
 		else {
 			std::cerr << "Unknown Presence type: " << *type << std::endl;
 			getStanzaGeneric()->setType(Presence::Available);

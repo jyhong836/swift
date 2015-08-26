@@ -12,13 +12,18 @@
 #include <Swiften/Elements/Stanza.h>
 #include <Swiften/Elements/StatusShow.h>
 
+#define SWIFTEN_INVISIBLE_PRESENCE
 
 namespace Swift {
 	class SWIFTEN_API Presence : public Stanza {
 		public:
 			typedef boost::shared_ptr<Presence> ref;
 
-			enum Type { Available, Error, Probe, Subscribe, Subscribed, Unavailable, Unsubscribe, Unsubscribed, Invisible, Visible };
+			enum Type { Available, Error, Probe, Subscribe, Subscribed, Unavailable, Unsubscribe, Unsubscribed, 
+				#ifdef SWIFTEN_INVISIBLE_PRESENCE
+					Invisible, Visible 
+				#endif // SWIFTEN_INVISIBLE_PRESENCE
+			};
 
 			Presence();
 			Presence(const std::string& status);
